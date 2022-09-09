@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Tính lãi ngân hàng </h2>
+số tiền ban đầu <br>
+<input id="nhap1" type="text"><br>
+số nam cho vay <br>
+<input id="nhap2" type="text"><br>
+lãi suất hàng nam <br>
+<input id="nhap3" type="text"><br>
+so lan  gop lai nam <br>
+<input id="nhap4" type="text"><br>
+<button onclick="bamKiemTra()">Kiểm tra</button>
+<h1 id="kq"></h1>
+<script>
+    function bamKiemTra() {
+        let soTien = +document.getElementById('nhap1').value
+        let soNam = +document.getElementById('nhap2').value
+        let soLai = +document.getElementById('nhap3').value
+        let soLayLai = +document.getElementById('nhap4').value
+        let ketQua = soTien*(Math.pow((1+soLai/100/soLayLai),(soNam*soLayLai)))
+        document.getElementById('kq').innerHTML = 'Số tiền phải trả sau ' + soNam+' nam là  ' +ketQua + "  đồng"
+    }
+</script>
+</body>
+</html>
